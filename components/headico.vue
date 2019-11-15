@@ -47,7 +47,6 @@ export default {
     },
     fn(i) {
       this.src = this.data[i].owner.avatar_url;
-      // localStorage.setItem("src", this.src);
       this.$store.dispatch("saveSrc", this.src);
       console.log(this.src);
     }
@@ -57,16 +56,6 @@ export default {
       return this.$store.state.data;
     }
   }
-
-  // watch: {
-  //   arr: {
-  //     handler() {
-  //       this.arr5 = this.arr[0];
-  //       localStorage.setItem("arr5", this.arr5);
-  //       console.log(this.arr5);
-  //     }
-  //   }
-  // }
 };
 </script>
 

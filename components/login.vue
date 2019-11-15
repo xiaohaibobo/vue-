@@ -43,8 +43,7 @@ export default {
           this.owarn = "登录错误";
         });
     }
-  },
-  
+  }
 };
 </script>
 

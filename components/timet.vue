@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       arr: [],
-       arr4: {}
+      arr4: {}
     };
   },
   methods: {

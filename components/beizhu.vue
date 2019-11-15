@@ -49,7 +49,7 @@ export default {
       localStorage.setItem("hasCover", this.done);
       this.$store.dispatch("setText", this.input);
     }
-  },
+  }
 };
 </script>
 

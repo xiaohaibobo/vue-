@@ -47,15 +47,10 @@ export default {
     },
     next() {
       this.$router.push({ path: "/timet" });
-      this.arr3=this.arr[0];
+      this.arr3 = this.arr[0];
       this.$store.dispatch("saveArr3", this.arr3);
     }
   },
-
-  // created() {
-  //   this.list = JSON.parse(localStorage.getItem("data"));
-  // }
-
   computed: {
     data() {
       return this.$store.state.data;

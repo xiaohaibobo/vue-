@@ -42,27 +42,15 @@ export default {
       this.$router.push({ path: "/firstpt" });
       this.arr2 = this.arr1[0];
       this.$store.dispatch("setData", this.arr2);
-      console.log(this.data)
+      console.log(this.data);
       // localStorage.setItem("arr2", this.arr2);
     }
   },
   computed: {
     data() {
-     return this.$store.state.data;
-      
+      return this.$store.state.data;
     }
-  },
-
-  
-
-  // watch: {
-  //   arr1: {
-  //     handler() {
-
-  //       console.log(this.arr2);
-  //     }
-  //   }
-  // }
+  }
 };
 </script>
 

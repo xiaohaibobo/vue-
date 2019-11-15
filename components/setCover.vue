@@ -31,11 +31,11 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
-    let st=localStorage.getItem('hasCover');
-    if(st){
-      next({path:'/restCover'});
-    }else{
-      next()
+    let st = localStorage.getItem("hasCover");
+    if (st) {
+      next({ path: "/restCover" });
+    } else {
+      next();
     }
   }
 };

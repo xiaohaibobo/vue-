@@ -27,12 +27,6 @@
 
 <script>
 export default {
-  // data() {
-  //   return {
-  //     arr2: "",
-  //     src: ""
-  //   };
-  // },
   methods: {
     logout() {
       localStorage.removeItem("token");
@@ -45,10 +39,9 @@ export default {
       localStorage.removeItem("arr4");
       localStorage.removeItem("src");
       localStorage.removeItem("input");
-      // localStorage.removeItem("data");
     }
   },
-  
+
   computed: {
     arr2() {
       return this.$store.state.arr2;
@@ -66,15 +59,6 @@ export default {
       return this.$store.state.input;
     }
   }
-
-  // created() {
-  //   this.arr2 = localStorage.getItem("arr2");
-  //   this.arr3 = localStorage.getItem("arr3");
-  //   this.arr4 = localStorage.getItem("arr4");
-
-  //   this.input = localStorage.getItem("input");
-  //   this.src = localStorage.getItem("src");
-  // }
 };
 </script>
 
