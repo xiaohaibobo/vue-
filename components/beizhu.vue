@@ -45,9 +45,11 @@ export default {
       this.$router.push({ path: "/headico" });
     },
     next() {
-      this.$router.push({ path: "/restCover" });
-      localStorage.setItem("hasCover", this.done);
-      this.$store.dispatch("setText", this.input);
+      if (this.input != "") {
+        this.$router.push({ path: "/restCover" });
+        localStorage.setItem("hasCover", this.done);
+        this.$store.dispatch("setText", this.input);
+      }
     }
   }
 };

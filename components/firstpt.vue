@@ -9,11 +9,12 @@
       </div>
     </div>
     <div id="ptList">
-      <el-checkbox-group  class="check-group" ref="fuxuan">
-        <el-radio v-model="arr"
+      <el-checkbox-group class="check-group" ref="fuxuan">
+        <el-radio
+          v-model="arr"
           v-for="(d,i) in data"
           :key="i"
-          :label="d.description?d.description:'这个人懒的狠，莫子都没写'"
+          :label="d.description?d.description:'这个人很低调，什么都没写'"
           class="ptcont"
           border
         ></el-radio>
@@ -32,7 +33,7 @@
 export default {
   data() {
     return {
-      arr: [],
+      arr: "",
 
       arr3: {}
     };
@@ -46,9 +47,11 @@ export default {
       this.$router.push({ path: "/ptname" });
     },
     next() {
-      this.$router.push({ path: "/timet" });
-      this.arr3 = this.arr;
-      this.$store.dispatch("saveArr3", this.arr3);
+      if (this.arr != "") {
+        this.$router.push({ path: "/timet" });
+        this.arr3 = this.arr;
+        this.$store.dispatch("saveArr3", this.arr3);
+      }
     }
   },
   computed: {

@@ -9,7 +9,7 @@
       </div>
     </div>
     <div id="ptList">
-      <el-checkbox-group  class="check-group" v-for="(d,i) in data" :key="i">
+      <el-checkbox-group class="check-group" v-for="(d,i) in data" :key="i">
         <div class="icoCont" style="height:40px" @change="fn(i)">
           <el-radio :label="d.name" class="ptcont" border v-model="arr"></el-radio>
           <img class="userico" :src="d.owner.avatar_url" />
@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      arr: [],
+      arr: "",
 
       src: {}
     };
@@ -43,7 +43,9 @@ export default {
       this.$router.push({ path: "/timet" });
     },
     next() {
-      this.$router.push({ path: "/beizhu" });
+      if (this.arr != "") {
+        this.$router.push({ path: "/beizhu" });
+      }
     },
     fn(i) {
       this.src = this.data[i].owner.avatar_url;

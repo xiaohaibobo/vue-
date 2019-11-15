@@ -9,8 +9,15 @@
       </div>
     </div>
     <div id="ptList">
-      <el-checkbox-group  class="check-group" ref="fuxuan">
-        <el-radio v-model="arr" v-for="(d,i) in data" :key="i" :label="d.updated_at" class="ptcont" border></el-radio>
+      <el-checkbox-group class="check-group" ref="fuxuan">
+        <el-radio
+          v-model="arr"
+          v-for="(d,i) in data"
+          :key="i"
+          :label="d.updated_at"
+          class="ptcont"
+          border
+        ></el-radio>
       </el-checkbox-group>
     </div>
     <div id="footer4">
@@ -26,7 +33,7 @@
 export default {
   data() {
     return {
-      arr: [],
+      arr: "",
       arr4: {}
     };
   },
@@ -40,9 +47,11 @@ export default {
       this.$router.push({ path: "/firstpt" });
     },
     next() {
-      this.$router.push({ path: "/headico" });
-      this.arr4 = this.arr;
-      this.$store.dispatch("setDatao", this.arr4);
+      if (this.arr != "") {
+        this.$router.push({ path: "/headico" });
+        this.arr4 = this.arr;
+        this.$store.dispatch("setDatao", this.arr4);
+      }
     }
   },
   computed: {
