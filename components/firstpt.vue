@@ -1,0 +1,68 @@
+<template>
+  <div>
+    <div class="rest-title">
+      <div class="restTcont">
+        <p>选择项目描述</p>
+        <el-row class="logout">
+          <el-button class="logoutBtn" @click="logout">退出</el-button>
+        </el-row>
+      </div>
+    </div>
+    <div id="ptList">
+      <el-checkbox-group v-model="arr" class="check-group" ref="fuxuan">
+        <el-checkbox
+          v-for="(d,i) in data"
+          :key="i"
+          :label="d.description?d.description:'这个人懒的狠，莫子都没写'"
+          class="ptcont"
+          border
+        ></el-checkbox>
+      </el-checkbox-group>
+    </div>
+    <div id="footer3">
+      <el-row>
+        <el-button type="success" @click="after">上一步</el-button>
+        <el-button type="success" @click="next">下一步</el-button>
+      </el-row>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      arr: [],
+
+      arr3: {}
+    };
+  },
+  methods: {
+    logout() {
+      localStorage.clear();
+      this.$router.push({ path: "/login" });
+    },
+    after() {
+      this.$router.push({ path: "/ptname" });
+    },
+    next() {
+      this.$router.push({ path: "/timet" });
+      this.arr3=this.arr[0];
+      this.$store.dispatch("saveArr3", this.arr3);
+    }
+  },
+
+  // created() {
+  //   this.list = JSON.parse(localStorage.getItem("data"));
+  // }
+
+  computed: {
+    data() {
+      return this.$store.state.data;
+    }
+  }
+};
+</script>
+
+<style>
+</style>
