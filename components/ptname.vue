@@ -9,8 +9,8 @@
       </div>
     </div>
     <div id="ptList">
-      <el-checkbox-group v-model="arr1" class="check-group">
-        <el-checkbox v-for="(d,i) in data" :key="i" :label="d.name" class="ptcont" border></el-checkbox>
+      <el-checkbox-group  class="check-group">
+        <el-radio v-model="arr1" v-for="(d,i) in data" :key="i" :label="d.name" class="ptcont" border></el-radio>
       </el-checkbox-group>
     </div>
     <div id="footer2">
@@ -40,7 +40,7 @@ export default {
     },
     next() {
       this.$router.push({ path: "/firstpt" });
-      this.arr2 = this.arr1[0];
+      this.arr2 = this.arr1;
       this.$store.dispatch("setData", this.arr2);
       console.log(this.data);
       // localStorage.setItem("arr2", this.arr2);

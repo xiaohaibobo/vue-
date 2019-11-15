@@ -9,9 +9,9 @@
       </div>
     </div>
     <div id="ptList">
-      <el-checkbox-group v-model="arr" class="check-group" v-for="(d,i) in data" :key="i">
+      <el-checkbox-group  class="check-group" v-for="(d,i) in data" :key="i">
         <div class="icoCont" style="height:40px" @change="fn(i)">
-          <el-checkbox :label="d.name" class="ptcont" border></el-checkbox>
+          <el-radio :label="d.name" class="ptcont" border v-model="arr"></el-radio>
           <img class="userico" :src="d.owner.avatar_url" />
         </div>
       </el-checkbox-group>
