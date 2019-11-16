@@ -36,7 +36,6 @@ export default {
           //跳转到个人信息页
           this.$router.push({ path: "/setCover" });
           this.$store.dispatch("saveData", data.data);
-          // localStorage.setItem("data", JSON.stringify(data.data));
           console.log(data.data);
         })
         .catch(err => {

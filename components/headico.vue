@@ -53,9 +53,16 @@ export default {
       console.log(this.src);
     }
   },
-  computed: {
+    computed: {
     data() {
-      return this.$store.state.data;
+      let adc=this.$store.state.data;
+      if(adc){
+      return adc
+      }else{
+        let ad=JSON.parse(localStorage.getItem('data'))
+        return ad
+      }
+      
     }
   }
 };

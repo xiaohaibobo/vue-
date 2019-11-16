@@ -33,7 +33,7 @@
 export default {
   data() {
     return {
-      arr1: '',
+      arr1: "",
       arr2: 0
     };
   },
@@ -46,16 +46,22 @@ export default {
       this.$router.push({ path: "/setCover" });
     },
     next() {
-      if (this.arr1!="") {
+      if (this.arr1 != "") {
         this.$router.push({ path: "/firstpt" });
-      this.arr2 = this.arr1;
-      this.$store.dispatch("setData", this.arr2);
+        this.arr2 = this.arr1;
+        this.$store.dispatch("setData", this.arr2);
       }
     }
   },
   computed: {
     data() {
-      return this.$store.state.data;
+      let adc = this.$store.state.data;
+      if (adc) {
+        return adc;
+      } else {
+        let ad = JSON.parse(localStorage.getItem("data"));
+        return ad;
+      }
     }
   }
 };
